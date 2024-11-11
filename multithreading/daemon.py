@@ -13,8 +13,8 @@ def counter(thread_name:str):
         if count>10:
             break
 
-t1 = threading.Thread(target=counter,args=('t1',))
-t2 = threading.Thread(target=counter,args=('t2',))
+t1 = threading.Thread(target=counter,daemon=True,args=('t1',))
+t2 = threading.Thread(target=counter,daemon=True,args=('t2',))
 
 t1.start()
 t2.start()
